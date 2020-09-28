@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cavedweller;
 
 /**
  *
- * @author jword
+ * @author 684438
  */
 public class Caveman {
-    //Fields / Instance variables
-    String name;
-    int hp, x, y;
-    boolean hasKey;
+    //Fields / Instance Variables
+    private String name;
+    private int hp, x, y;
+    private boolean hasKey;
     
     //Constructor
     public Caveman(String name, int x, int y) {
@@ -23,6 +19,7 @@ public class Caveman {
         this.x = x;
         this.y = y;
     }
+    
     //Methods
     public void speak() {
         System.out.println("Grr");
@@ -32,6 +29,49 @@ public class Caveman {
         return "x: "+x+", y: "+y;
     }
     
-    //Accessors - getters & setters
+    public void moveUp() {
+        //y tracks how far down
+        y -= 1;
+    }
+    public void moveDown() {
+        y += 1;
+    }
+    public void moveLeft() {
+        x -= 1;
+    }
+    public void moveRight() {
+        x += 1;
+    }
+    
+    public void eat(Food food){
+        hp += food.getHpChange();
+    }
+    //Accescors / getters & setters
+    public int getHP() {
+        return hp;
+    }
+    
+    public void setHP(int hp) {
+        if (hp <= 100 && hp >= 0) {
+            this.hp = hp;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public boolean isHasKey() {
+        return hasKey;
+    }
+    
     
 }
