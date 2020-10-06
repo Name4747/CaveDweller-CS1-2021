@@ -51,6 +51,7 @@ public class Caveman {
     
     public void pickUpKey() {
         hasKey = true;
+        System.out.println("You picked up the key!");
     }
     
     public void openDoor() {
