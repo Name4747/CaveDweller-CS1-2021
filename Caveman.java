@@ -44,7 +44,23 @@ public class Caveman {
     }
     
     public void eat(Food food){
-        hp += food.getHpChange();
+        this.hp += food.getHpChange();
+        food.setEaten(true);
+        System.out.println("Me eat"+food.getName());
+    }
+    
+    public void pickUpKey() {
+        hasKey = true;
+    }
+    
+    public void openDoor() {
+        if (hasKey == true) {
+            System.out.println("You open the door with the key, Caveman Escaped!");
+            System.exit(0);
+        }
+        else {
+            System.out.println("You found the door, but you dont have the key.");
+        }
     }
     //Accescors / getters & setters
     public int getHP() {
@@ -69,7 +85,7 @@ public class Caveman {
         return y;
     }
 
-    public boolean isHasKey() {
+    public boolean HasKey() {
         return hasKey;
     }
     

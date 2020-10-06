@@ -11,10 +11,10 @@ public class Food {
     private int x, y, hpChange;
     private boolean eaten;
     //Constructor
-    public Food(String name, int x, int y, int hpChange) {
+    public Food(String name, int x, int y) {
         this.eaten = false;
+        this.hpChange = 20;
         this.name = name;
-        this.hpChange = hpChange;
         this.x = x;
         this.y = y;
     }
